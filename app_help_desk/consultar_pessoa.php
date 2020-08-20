@@ -1,10 +1,10 @@
 <?php
   $acao = 'listagem';
-  require "valida_registro.php";
+  require "valida_pessoa.php";
   
-  echo'<pre>';
-  //print_r($registros);
-  echo'</pre>';
+  //echo'<pre>';
+    //print_r($pessoas);
+  //echo'</pre>';
 ?>
 
 <html>
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <style>
-      .card-consultar-chamado {
+      .card-consultar-pessoa {
         padding: 30px 0 0 0;
         width: 100%;
         margin: 0 auto;
@@ -38,25 +38,25 @@
     <div class="container">    
       <div class="row">
 
-        <div class="card-consultar-chamado">
+        <div class="card-consultar-pessoa">
           <div class="card">
             <div class="card-header">
-              Consulta de chamado
+              Consulta de funcionários cadastrados
             </div>
 
             
             <div class="card-body">
-              <? foreach($registros as $indice => $registro){?>
+              <?php foreach($pessoas as $indice => $pessoa){?>
                 <div class="card mb-3 bg-light">
                   <div class="card-body">
                     <h5 class="card-title">
-                      <?=$registro->titulo?>
+                      <?= $pessoa->nome?>
                     </h5>
                     <h6 class="card-subtitle mb-2 text-muted">
-                      <?=$registro->nome_categoria?>
+                    <?= $pessoa->cargo?> - <?=$pessoa->setor?>
                     </h6>
                     <p class="card-text">
-                    <?= $registro->descricao?>
+                    <?= $pessoa->email?>
                     </p>
 
                   </div>
@@ -64,10 +64,12 @@
               <?}?>
 
               <div class="row mt-5">
-                <div class="col-12">            
+                <div class="col-12">
+                  
                   <a href="home.php">
                     <button class="btn btn-lg btn-warning btn-block text-white">Voltar</button>
-                  </a>              
+                  </a>
+                
                 </div>
               </div>
             </div>

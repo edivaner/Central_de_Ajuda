@@ -10,6 +10,7 @@
     <title>App Help Desk</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
       .card-home {
@@ -23,7 +24,7 @@
   <body>
 
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="home.php">
         <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
@@ -40,18 +41,41 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-6 d-flex justify-content-center">
-                  <a href="abrir_chamado.php?recuperarcategoria">
+                  <a href="abrir_chamado.php?">
                     <img src="formulario_abrir_chamado.png" width="70" height="70">
                   </a>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
-                  <a href="consultar_chamado.php?listagem">
+                  <a href="consultar_chamado.php?">
                     <img src="formulario_consultar_chamado.png" width="70" height="70">
                   </a>
                 </div>
-
-
               </div>
+
+            <!-- Caso login for adm -->
+              <div class="row mt-5">
+                <div class="col-6 d-flex justify-content-center fa-4x" >
+                  <a href="cadastrar_pessoa.php">
+                  <i class="fa fa-address-card" aria-hidden="true"></i>
+                  </a>
+                </div>
+                <div class="col-6 d-flex justify-content-center fa-3x">
+                  <a href="consultar_pessoa.php">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <i class="fa fa-address-card" aria-hidden="true">
+                    </i>
+                  </a>
+                </div>
+              </div>
+
+              <div class="row mt-5 d-flex justify-content-center">
+                <div class="col-6 d-flex justify-content-center fa-4x" >
+                  <a href="categoria.php">
+                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>

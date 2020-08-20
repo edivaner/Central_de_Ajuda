@@ -11,13 +11,16 @@
         width: 350px;
         margin: 0 auto;
       }
+      a:link {
+        text-decoration: none;
+      }
     </style>
   </head>
 
   <body>
 
     <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="home.php">
         <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
         App Help Desk
       </a>
@@ -38,10 +41,19 @@
               Olá, administrador. Cadastre um novo usuário.
             </div>
             <div class="card-body">
-              <form action='valida_pessoa.php' method='post' >
-              <div class="form-group">
+              <form action='valida_pessoa.php?acao=inserir' method='post' >
+                <div class="form-group">
                   <input type="name" class="form-control" placeholder="Nome" name='nome'>
                 </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Cargo" name='cargo'>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Setor" name='setor'>
+                </div>
+
                 <div class="form-group">
                   <input type="email" class="form-control" placeholder="E-mail" name='email'>
                 </div>
@@ -50,6 +62,12 @@
                 </div>
                 <button class="btn btn-lg btn-info btn-block" type="submit">Cadastrar</button>
               </form>
+              <div class="row mt-5">
+                <div class="col-12">
+                  <a href="home.php">
+                    <button class="btn btn-lg btn-warning btn-block text-white">Voltar</button>
+                  </a>
+                </div>
             </div>
           </div>
         </div>
