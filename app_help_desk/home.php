@@ -7,7 +7,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>App Help Desk</title>
+    <title>HELP-ME</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -25,8 +25,8 @@
 
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="home.php">
-        <img src="logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
-        App Help Desk
+        <img src="image/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        Assistência a departamentos
       </a>
     </nav>
 
@@ -42,12 +42,12 @@
               <div class="row">
                 <div class="col-6 d-flex justify-content-center">
                   <a href="abrir_chamado.php?">
-                    <img src="formulario_abrir_chamado.png" width="70" height="70">
+                    <img src="image/formulario_abrir_chamado.png" width="70" height="70">
                   </a>
                 </div>
                 <div class="col-6 d-flex justify-content-center">
                   <a href="consultar_chamado.php?">
-                    <img src="formulario_consultar_chamado.png" width="70" height="70">
+                    <img src="image/formulario_consultar_chamado.png" width="70" height="70">
                   </a>
                 </div>
               </div>
