@@ -38,7 +38,7 @@
         <div class="card-login">
           <div class="card">
             <div class="card-header">
-              Olá, administrador. Cadastre um novo usuário.
+              Olá, administrador. Cadastre um novo funcionário com acesso ao sistema.
             </div>
             <div class="card-body">
               <form action='valida_pessoa.php?acao=inserir' method='post' >

@@ -17,7 +17,7 @@
         }
 
         public function recuperar(){
-            $query = 'select id, nome_categoria FROM categoria ';
+            $query = 'select id, nome_categoria FROM categoria';
             $stmt= $this->conexao->prepare($query);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -29,6 +29,25 @@
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
+
+        public function atualizar(){
+            $query = "update categoria set nome_categoria = :categoria WHERE id = :id";
+            
+            $stmt = $this->conexao->prepare($query);
+            $stmt->bindValue(':categoria',$this->categoria->__get('nome_categoria'));
+            $stmt->bindValue(':id', $this->categoria->__get('id'));
+
+            return $stmt->execute();
+        }
+        
+        public function remover(){
+			$query = "delete from categoria where id = :id";
+			$stmt = $this->conexao->prepare($query);
+			$stmt->bindValue(":id", $this->categoria->__get('id'));
+            $stmt->execute();
+            
+            
+		}
 
 
     }

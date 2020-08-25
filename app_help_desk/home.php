@@ -51,34 +51,40 @@
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
-            <!-- Caso login for adm -->
+        <div class="card-home">
+          <div class="card">
+            <div class="card-header">
+              Funções do Administrador
+            </div>
+            <div class="card-body">
               <div class="row mt-5">
-                <div class="col-6 d-flex justify-content-center fa-4x" >
+                <div class="col-4 d-flex justify-content-center fa-4x" >
                   <a href="cadastrar_pessoa.php">
                   <i class="fa fa-address-card" aria-hidden="true"></i>
                   </a>
                 </div>
-                <div class="col-6 d-flex justify-content-center fa-3x">
+                <div class="col-4 d-flex justify-content-center fa-3x">
                   <a href="consultar_pessoa.php">
                     <i class="fa fa-search" aria-hidden="true"></i>
                     <i class="fa fa-address-card" aria-hidden="true">
                     </i>
                   </a>
                 </div>
-              </div>
-
-              <div class="row mt-5 d-flex justify-content-center">
-                <div class="col-6 d-flex justify-content-center fa-4x" >
+                <div class="col-4 d-flex justify-content-center fa-4x" >
                   <a href="categoria.php">
                     <i class="fa fa-list-alt" aria-hidden="true"></i>
                   </a>
                 </div>
-              </div>
 
+              </div>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </body>
 </html>
