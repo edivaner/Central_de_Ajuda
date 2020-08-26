@@ -13,6 +13,8 @@
     <title>Consultar funcionarios - ADMINISTRADOR</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 
     <style>
       .card-consultar-pessoa {
@@ -24,6 +26,13 @@
         text-decoration: none;
       }
     </style>
+
+    <script>
+      function remover(id){
+				//alert(id);
+				location.href = 'valida_pessoa.php?acao=remover&id='+id;
+			}
+    </script>
   </head>
 
   <body>
@@ -48,18 +57,25 @@
             <div class="card-body">
               <?php foreach($pessoas as $indice => $pessoa){?>
                 <div class="card mb-3 bg-light">
-                  <div class="card-body">
-                    <h5 class="card-title">
-                      <?= $pessoa->nome?>
-                    </h5>
-                    <h6 class="card-subtitle mb-2 text-muted">
-                    <?= $pessoa->cargo?> - <?=$pessoa->setor?>
-                    </h6>
-                    <p class="card-text">
-                    <?= $pessoa->email?>
-                    </p>
+                  <div class="row">
+                    <div class="col-sm-9 d-flex align-item-center">
+                      <div class="card-body">
+                        <h5 class="card-title">
+                          <?= $pessoa->nome?>
+                        </h5>
+                        <h6 class="card-subtitle mb-2 text-muted">
+                        <?= $pessoa->cargo?> - <?=$pessoa->setor?>
+                        </h6>
+                        <p class="card-text">
+                        <?= $pessoa->email?>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-sm-3 mt-2 d-flex justify-content-end">
+                    <i class="fas fa-trash-alt fa-lg text-danger p-1" onclick="remover(<?= $pessoa->id?>)"></i>                 
+                    </div>
 
-                  </div>
+                  </div>  
                 </div>
               <?}?>
 

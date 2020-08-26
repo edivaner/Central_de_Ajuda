@@ -1,9 +1,12 @@
 <?php
 
     class Registro{
+        private $id;
         private $titulo;
+        private $idpessoa;
         private $categoria;
         private $descricao;
+        private $status;
 
         public function __get($atributo){
             return $this->$atributo;

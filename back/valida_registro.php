@@ -43,10 +43,36 @@
 
       $categorias = $registroService->recuperarCategoria();
 
+    } else if($acao == 'atualizar'){
+      $registro = new Registro();
+      $conexao = new Conexao();
+      $registroService = new registroService($conexao,$registro);
+
+      $registro->__set('titulo', $_POST['titulo']);
+      $registro->__set('categoria', $_POST['categoria']);
+      $registro->__set('descricao', $_POST['registro']);
+      $registro->__set('idpessoa', $_POST['id_pessoa']);
+      $registro->__set('id', $_POST['id']);
+      $registro->__set('status', $_POST['status']);
+
+      if($registroService->atualizar()){
+        header('Location: consultar_chamado.php');
+      } else{
+        echo "Problema ao atualizar o Banco de dados";
+      }
+
+
+    } else if($acao == 'remover'){
+      $registro = new Registro();
+      $registro->__set('id', $_GET['id']);
+
+      $conexao = new Conexao();
+
+      $registroService = new registroService($conexao, $registro);
+      $registroService->remover();
+      
+      header("Location: consultar_chamado.php");
+
     }
-
-
-    
-        
-        
+   
 ?>

@@ -29,9 +29,6 @@
         $categorias = $categoriaService->recuperar();
 
     } else if($acao == 'atualizar'){
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
 
 		$categoria = new Categoria();
         

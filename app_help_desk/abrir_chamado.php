@@ -3,9 +3,9 @@
   
   require 'valida_registro.php';
 
-  //echo'<pre>';
-  //print_r($categorias);
-  //echo'</pre>';
+  // echo'<pre>';
+  // print_r($registros);
+  // echo'</pre>';
 ?>
 
 <html><head>

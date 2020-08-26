@@ -47,11 +47,11 @@
 				inputCategoria.className = 'col-9 form-control';
 				inputCategoria.value = txt_categoria;
 
-				//criar um input hidden para guardear o id da tarefa
-				let inputId = document.createElement('input');
-				inputId.type = 'hidden';
-				inputId.name = 'id';
-				inputId.value = id;
+            //criar um input hidden para guardear o id da tarefa
+            let inputId = document.createElement('input');
+            inputId.type = 'hidden';
+            inputId.name = 'id';
+            inputId.value = id;
 
 				//criar um button para envio do form
 				let button = document.createElement('button');
@@ -135,15 +135,15 @@
                               <div class="card-body">
                                 <?foreach($categorias as $indice =>$categoria){?>
                                   <div class="row">
-                                    <div class="col-sm-9 d-flex align-items-center categoria">
+                                    <div class="col-sm-9 d-flex align-item-center categoria">
                                       <div class="card-title pt-3" id="categoria_<?= $categoria->id?>">
                                           <?=$categoria->nome_categoria?>
                                       </div>
                                     </div>
 
-                                    <div class="col-sm-3 mt-2 d-flex justify-content-between">
-                                      <i class="fas fa-trash-alt fa-lg text-danger" onclick="remover(<?= $categoria->id?>)"></i>
-                                      <i class="fas fa-edit fa-lg text-info" onclick="editar(<?= $categoria->id?>, '<?= $categoria->nome_categoria?>')"></i>                         
+                                    <div class="col-sm-3 mt-2 d-flex justify-content-end">
+                                      <i class="fas fa-trash-alt fa-lg text-danger p-1" onclick="remover(<?= $categoria->id?>)"></i>
+                                      <i class="fas fa-edit fa-lg text-info p-1" onclick="editar(<?= $categoria->id?>, '<?= $categoria->nome_categoria?>')"></i>
                                     </div>
                                   
                                   </div>                           
