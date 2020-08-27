@@ -29,18 +29,19 @@
       $pessoas = $pessoaService->recuperar();
 
     } else if($acao == 'remover'){
+
       $pessoa = new Pessoa();
       $pessoa->__set('id', $_GET['id']);
 
       $conexao = new Conexao();
 
       $pessoaService = new pessoaService($conexao, $pessoa);
-      $pessoaService->remover();
+      if($pessoaService->remover()){
+        header("Location: consultar_pessoa.php");
+      } else {
+        echo "OPS... Está pessoa Tem pendências no sistema, resolva e exclua a pendência antes de continua.";
+      }
       
-      header("Location: consultar_pessoa.php");
     }
 
-    
-        
-        
 ?>

@@ -1,6 +1,7 @@
 <?php
   $acao = 'listagem';
   require "valida_pessoa.php";
+  $i=0;
   
   //echo'<pre>';
     //print_r($pessoas);
@@ -55,13 +56,15 @@
 
             
             <div class="card-body">
-              <?php foreach($pessoas as $indice => $pessoa){?>
+              <?php foreach($pessoas as $indice => $pessoa){
+                $i++;
+                ?>
                 <div class="card mb-3 bg-light">
                   <div class="row">
                     <div class="col-sm-9 d-flex align-item-center">
                       <div class="card-body">
                         <h5 class="card-title">
-                          <?= $pessoa->nome?>
+                          <?=$i?> - <?= $pessoa->nome?>
                         </h5>
                         <h6 class="card-subtitle mb-2 text-muted">
                         <?= $pessoa->cargo?> - <?=$pessoa->setor?>

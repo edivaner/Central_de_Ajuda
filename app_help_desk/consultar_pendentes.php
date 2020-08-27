@@ -1,10 +1,10 @@
 <?php
-  $acao = 'listagem';
+  $acao = 'recuperarPendentes';
   require "valida_registro.php";
   $i=0;
 
   // echo'<pre>';
-  //   print_r($registros);
+  // print_r($registros);
   // echo'</pre>';
 ?>
 
@@ -44,19 +44,19 @@
 				inputRegistro.className = 'col-4 form-control';
 				inputRegistro.value = txt_registro;
 
-            //criar um input hidden para guardar o id da registro
+            //criar um input hidden para guardar o id da tarefa
             let inputId = document.createElement('input');
             inputId.type = 'hidden';
             inputId.name = 'id';
             inputId.value = id;
 
-            //criar um input hidden para guardar o id_pessoa da registro
+            //criar um input hidden para guardar o id_pessoa da tarefa
             let inputPessoa = document.createElement('input');
             inputPessoa.type = 'hidden';
             inputPessoa.name = 'id_pessoa';
             inputPessoa.value = pessoa;
 
-            //criar um input hidden para guardear o Titulo da registro
+            //criar um input hidden para guardear o Titulo da tarefa
             let inputTitulo = document.createElement('input');
             inputTitulo.type = 'hidden';
             inputTitulo.name = 'titulo';
@@ -69,7 +69,7 @@
             inputStatus.name = 'id_status';
             inputStatus.value = status;
 
-            //criar um input hidden para guardear o Categoria da registro
+            //criar um input hidden para guardear o Categoria da tarefa
             let inputCategoria = document.createElement('input');
             inputCategoria.type = 'hidden';
             inputCategoria.name = 'id_categoria';
@@ -83,7 +83,7 @@
 
         //alert(txt_registro);
 
-				//Incluir inputRegistro no form
+				//Incluir inputTarefa no form
 				form.appendChild(inputRegistro);
 
             //incluir o inputID no form
@@ -120,7 +120,7 @@
 			}
 
       function marcarRealizada(id){
-				location.href = 'valida_registro.php?acao=marcarRealizada&id='+id;
+				location.href = 'valida_registro.php?acao=marcarRealizadaPendentes&id='+id;
 			}
 
     </script>
@@ -149,7 +149,7 @@
 
             
             <div class="card-body">
-              <? foreach($registros as $indice => $registro){ 
+              <? foreach($registros as $indice => $registro){
                 $i++;
                 ?>
                 <div class="card mb-3 bg-light">
@@ -158,7 +158,7 @@
                       <div class="card-body">
                         <div class="titulo">
                           <h5 class="card-title">
-                          <?=$i?> -  <?=$registro->titulo?> 
+                            <?=$i?> - <?=$registro->titulo?>
                           </h5>
                         </div>
                         <h6 class="card-subtitle mb-2 text-muted">
@@ -175,12 +175,10 @@
                     <div class="col-sm-3 mt-2 d-flex justify-content-end">
                       <!-- remover e editarnão podem aparecer para o ADM -->
                       <i class="fas fa-trash-alt fa-lg text-danger p-1" onclick="remover(<?= $registro->id?>)"></i>
-                      
-                        <? if($registro->status == 1) { ?>
-                          <i class="fas fa-edit fa-lg text-info p-1" onclick="editar(<?= $registro->id?>, '<?=$registro->titulo?>', <?=$registro->id_categoria?>, <?=$registro->id_pessoa?>, '<?= $registro->status?>', '<?= $registro->descricao?>', )"> </i>
 
-                          <i class="fas fa-check-square fa-lg text-success p-1" onclick="marcarRealizada(<?= $registro->id?>)"></i>   
-                        <?}?>              
+                      <i class="fas fa-edit fa-lg text-info p-1" onclick="editar(<?= $registro->id?>, '<?=$registro->titulo?>', <?=$registro->id_categoria?>, <?=$registro->id_pessoa?>, '<?= $registro->status?>', '<?= $registro->descricao?>', )"> </i>
+
+                      <i class="fas fa-check-square fa-lg text-success p-1" onclick="marcarRealizada(<?= $registro->id?>)"></i>                 
                     </div>
 
                   </div>

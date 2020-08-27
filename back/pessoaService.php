@@ -40,7 +40,7 @@
         }
 
         public function remover(){
-            $query = "delete FROM pessoa WHERE pessoa.id = :id";
+            $query = "delete FROM pessoa WHERE id = :id";
 			$stmt = $this->conexao->prepare($query);
 			$stmt->bindValue(":id", $this->pessoa->__get('id'));
             $stmt->execute();

@@ -18,6 +18,22 @@
         width: 100%;
         margin: 0 auto;
       }
+
+      a{
+        color: black;
+      }
+      a:link {
+        text-decoration: none;
+        color: black;
+      }
+      .linke:hover{
+        color: #16a4b2;
+        font-size:60px;
+      }
+      .letras{
+        font-size:0.3em;
+      }
+
     </style>
   </head>
 
@@ -40,14 +56,22 @@
             </div>
             <div class="card-body">
               <div class="row">
-                <div class="col-6 d-flex justify-content-center">
-                  <a href="abrir_chamado.php?">
-                    <img src="image/formulario_abrir_chamado.png" width="70" height="70">
+                <div class="col-4 d-flex justify-content-center fa-4x">
+                  <a href="abrir_chamado.php?" class="linke">
+                    <p class="text-dark letras">Abrir Pedido</p>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                   </a>
                 </div>
-                <div class="col-6 d-flex justify-content-center">
-                  <a href="consultar_chamado.php?">
-                    <img src="image/formulario_consultar_chamado.png" width="70" height="70">
+                <div class="col-4 d-flex justify-content-center fa-4x">                
+                  <a href="consultar_chamado.php?" class="linke">
+                    <p class="text-dark letras">Listar Todos os Pedidos</p>
+                    <i class="fa fa-file" aria-hidden="true"></i>
+                  </a>
+                </div>
+                <div class="col-4 d-flex justify-content-center fa-4x">              
+                  <a href="consultar_pendentes.php?" class="linke">
+                    <p class="text-dark letras">Listar Pedidos Pendentes</p>
+                    <i class="fa fa-repeat" aria-hidden="true"></i>
                   </a>
                 </div>
               </div>
@@ -63,19 +87,21 @@
             <div class="card-body">
               <div class="row mt-5">
                 <div class="col-4 d-flex justify-content-center fa-4x" >
-                  <a href="cadastrar_pessoa.php">
-                  <i class="fa fa-address-card" aria-hidden="true"></i>
+                  <a href="cadastrar_pessoa.php" class="linke">
+                    <p class="text-dark letras">Cadastrar Pessoa</p>
+                    <i class="fa fa-address-card-o" aria-hidden="true"></i>
                   </a>
                 </div>
-                <div class="col-4 d-flex justify-content-center fa-3x">
-                  <a href="consultar_pessoa.php">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                    <i class="fa fa-address-card" aria-hidden="true">
+                <div class="col-4 d-flex justify-content-center fa-4x">
+                  <a href="consultar_pessoa.php" class="linke">
+                    <p class="text-dark letras">Listar Pessoas</p>
+                    <i class="fa fa-users" aria-hidden="true"></i>
                     </i>
                   </a>
                 </div>
                 <div class="col-4 d-flex justify-content-center fa-4x" >
-                  <a href="categoria.php">
+                  <a href="categoria.php" class="linke">
+                    <p class="text-dark letras">Categorias</p>
                     <i class="fa fa-list-alt" aria-hidden="true"></i>
                   </a>
                 </div>

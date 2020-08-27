@@ -8,7 +8,7 @@
 
     if($acao == 'inserir'){
       $conexao = new Conexao();
-      $registro = new Registro();
+      $registro = new Registro();      
       $registroService = new registroService($conexao,$registro);
 
       $registro->__set('titulo', $_POST['titulo']);
@@ -46,19 +46,21 @@
     } else if($acao == 'atualizar'){
       $registro = new Registro();
       $conexao = new Conexao();
-      $registroService = new registroService($conexao,$registro);
+      
 
       $registro->__set('titulo', $_POST['titulo']);
-      $registro->__set('categoria', $_POST['categoria']);
+      $registro->__set('categoria', $_POST['id_categoria']);
       $registro->__set('descricao', $_POST['registro']);
       $registro->__set('idpessoa', $_POST['id_pessoa']);
       $registro->__set('id', $_POST['id']);
-      $registro->__set('status', $_POST['status']);
+      $registro->__set('status', $_POST['id_status']);
+
+      $registroService = new registroService($conexao,$registro);
 
       if($registroService->atualizar()){
         header('Location: consultar_chamado.php');
       } else{
-        echo "Problema ao atualizar o Banco de dados";
+       echo "Problema ao atualizar o Banco de dados";
       }
 
 
@@ -73,6 +75,53 @@
       
       header("Location: consultar_chamado.php");
 
+    } else if($acao == "marcarRealizada"){
+      $registro = new Registro();
+      $registro->__set('id', $_GET['id']);
+      $registro->__set('status',2);
+
+      echo'<pre>';
+      print_r($registro);
+      echo'</pre>';
+
+  
+      $conexao = new Conexao();
+  
+      $registroService = new RegistroService($conexao, $registro);
+      
+  
+      if($registroService->marcarRealizada()){
+        header('Location: consultar_chamado.php');
+      }else {
+        echo "Erro ao marcar pedido como realizado!";
+      }
+  
+    } else if($acao=="recuperarPendentes"){
+
+      $registro = new Registro();
+      $registro->__set('status',1);
+      $conexao = new Conexao();
+  
+      $registroService = new registroService($conexao, $registro);
+      $registros = $registroService->recuperarPendentes();
+  
+    }else if($acao == "marcarRealizadaPendentes"){
+
+      $registro = new Registro();
+      $registro->__set('id', $_GET['id']);
+      $registro->__set('status',2);
+
+      $conexao = new Conexao();
+  
+      $registroService = new RegistroService($conexao, $registro);
+      
+  
+      if($registroService->marcarRealizada()){
+        header('Location: consultar_pendentes.php');
+      }else {
+        echo "Erro ao marcar pedido como realizado!";
+      }
+  
     }
    
 ?>
