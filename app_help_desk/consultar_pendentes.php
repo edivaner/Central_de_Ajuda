@@ -33,7 +33,7 @@
 			
 				//Criar um form de edição
 				let form = document.createElement('form');
-				form.action = 'valida_registro.php?acao=atualizar';
+				form.action = 'valida_registro.php?pag=pendentes&acao=atualizar';
 				form.method = 'post';
 				form.className = 'row';
 
@@ -116,11 +116,12 @@
 
 			function remover(id){
 				//alert(id);
-				location.href = 'valida_registro.php?acao=remover&id='+id;
+				location.href = 'valida_registro.php?pag=pendentes&acao=remover&id='+id;
 			}
 
       function marcarRealizada(id){
-				location.href = 'valida_registro.php?acao=marcarRealizadaPendentes&id='+id;
+        //alert(id);
+				location.href = 'valida_registro.php?pag=pendentes&acao=marcarRealizada&id='+id;
 			}
 
     </script>
@@ -173,7 +174,7 @@
                     </div>
 
                     <div class="col-sm-3 mt-2 d-flex justify-content-end">
-                      <!-- remover e editarnão podem aparecer para o ADM -->
+                      <!-- remover e editar não podem aparecer para o ADM -->
                       <i class="fas fa-trash-alt fa-lg text-danger p-1" onclick="remover(<?= $registro->id?>)"></i>
 
                       <i class="fas fa-edit fa-lg text-info p-1" onclick="editar(<?= $registro->id?>, '<?=$registro->titulo?>', <?=$registro->id_categoria?>, <?=$registro->id_pessoa?>, '<?= $registro->status?>', '<?= $registro->descricao?>', )"> </i>

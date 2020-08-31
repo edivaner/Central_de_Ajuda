@@ -33,7 +33,7 @@
 			
 				//Criar um form de edição
 				let form = document.createElement('form');
-				form.action = 'valida_registro.php?acao=atualizar';
+				form.action = 'valida_registro.php?pag=todos&acao=atualizar';
 				form.method = 'post';
 				form.className = 'row';
 
@@ -116,11 +116,11 @@
 
 			function remover(id){
 				//alert(id);
-				location.href = 'valida_registro.php?acao=remover&id='+id;
+				location.href = 'valida_registro.php?pag=todos&acao=remover&id='+id;
 			}
 
       function marcarRealizada(id){
-				location.href = 'valida_registro.php?acao=marcarRealizada&id='+id;
+				location.href = 'valida_registro.php?pag=todos&acao=marcarRealizada&id='+id;
 			}
 
     </script>

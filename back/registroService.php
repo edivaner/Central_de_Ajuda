@@ -92,7 +92,7 @@
 
 		public function recuperarPendentes(){
 			$query = "
-            SELECT r.id, r.titulo, r.id_pessoa, r.id_categoria, c.nome_categoria, r.descricao, s.id, s.nome_status
+            SELECT r.id, r.titulo, r.id_pessoa, r.id_categoria, c.nome_categoria, r.descricao, r.status, s.nome_status
             FROM registro r left join categoria c
             ON(r.status = c.id) LEFT join status s ON(r.status = s.id)
             WHERE r.status = 1
