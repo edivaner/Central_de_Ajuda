@@ -25,6 +25,11 @@
       a:link {
         text-decoration: none;
       }
+
+      .flow-chamado{
+        height: 500px;
+        overflow: scroll;
+      }
     </style>
 
 <script>
@@ -149,6 +154,7 @@
 
             
             <div class="card-body">
+            <div class="flow-chamado">
               <? foreach($registros as $indice => $registro){ 
                 $i++;
                 ?>
@@ -194,6 +200,7 @@
                   </a>              
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

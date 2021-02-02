@@ -25,6 +25,11 @@
       a:link {
         text-decoration: none;
       }
+
+      .flow-pendentes{
+        height: 400px;
+        overflow: scroll;
+      }
     </style>
 
 <script>
@@ -150,6 +155,7 @@
 
             
             <div class="card-body">
+            <div class="flow-pendentes">
               <? foreach($registros as $indice => $registro){
                 $i++;
                 ?>
@@ -193,6 +199,7 @@
                   </a>              
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

@@ -29,6 +29,12 @@
       a:link {
         text-decoration: none;
       }
+
+      .flow-categoria{
+        height: 350px;
+        width: 685px;
+        overflow: scroll;
+      }
     </style>
 
 <script>
@@ -133,6 +139,7 @@
                       <div class="card-body">
                           <div class="card mb-3 bg-light">
                               <div class="card-body">
+                              <div class="flow-categoria" >
                                 <?foreach($categorias as $indice =>$categoria){?>
                                   <div class="row">
                                     <div class="col-9 d-flex align-item-center categoria">
@@ -149,6 +156,7 @@
                                   </div>                           
                                   <hr>
                                 <?}?>
+                              </div>
                               </div>
                           </div>
                       </div>

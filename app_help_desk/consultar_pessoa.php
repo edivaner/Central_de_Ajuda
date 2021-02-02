@@ -26,6 +26,11 @@
       a:link {
         text-decoration: none;
       }
+
+      .flow-pessoa{
+        height: 500px;
+        overflow: scroll;
+      }
     </style>
 
     <script>
@@ -56,6 +61,7 @@
 
             
             <div class="card-body">
+            <div class="flow-pessoa">
               <?php foreach($pessoas as $indice => $pessoa){
                 $i++;
                 ?>
@@ -91,6 +97,7 @@
                 
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
